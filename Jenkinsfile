@@ -5,7 +5,7 @@ pipeline {
         stage('deployment') {
             steps {
                 withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'EKS-jai-1', contextName: '', credentialsId: 'k8-token', namespace: '', serverUrl: 'https://8EE899DE13C35FCC694483760727A13C.gr7.ap-south-1.eks.amazonaws.com']]) {
-                    sh  "kubectl apply -f deployment-service.yml  "
+                    sh  "kubectl apply -f deployment-service.yml"
                 }
             }
         }
